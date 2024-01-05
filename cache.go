@@ -10,13 +10,15 @@ func NewCache() *Cache {
 	}
 }
 
-func Set(key string, value interface{})
+func (c *Cache) Set(key string, value interface{}) {
+	c.data[key] = value
+}
 
 func (c *Cache) Get(key string) interface{} {
 	value := c.data[key]
 	return value
 }
 
-func (c *Cache) Delte(key string) {
+func (c *Cache) Delete(key string) {
 	delete(c.data, key)
 }
